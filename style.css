@@ -6,8 +6,8 @@
 body {
 	font-family: 'Oranienbaum', serif;
 	background: /*url("BoW-Morning.jpg") */no-repeat center center fixed;
-	background-size: cover;
-	height: 100%;
+	width: 100%;
+	height: auto;
 	overflow: hidden;
 }
 
@@ -16,10 +16,10 @@ body {
 	display: flex;
 	flex-flow: row wrap;
 	min-height: 40vh;
-	text-align: left;
-	justify-content: left;
+	text-align: center;
+	justify-content: center;
 	align-items: center;
-	margin-left: 5%;
+	
 }
 
 .greet, .clock {
@@ -37,6 +37,7 @@ input[type='text'] {
 }
 
 input::placeholder {
+	text-align: center;
 	color: white;
 	opacity: 0.9;
 }
@@ -52,17 +53,17 @@ input::placeholder {
 .nav ul{
 
 	display: flex;
-	flex-flow: column wrap;
+	flex-flow: row wrap;
 	padding: 0;
 	justify-content: space-around;
-	margin-left: 5%;
+	
 
 }
 
 .nav ul li {
 	list-style-type: none;
-	padding: 5px;
-	font-size: 2em;
+	padding: 2px;
+	font-size: 3em;
 
 }
 
@@ -70,7 +71,7 @@ input::placeholder {
 	color: white;
 	text-shadow: 0 0 10px rgba(23, 32, 42, 0.5);
 	transition: 1s ease-out;
-	opacity: 0.6;
+	opacity: 1;
 }
 
 .nav ul a:hover {
@@ -100,22 +101,35 @@ img.nav-bg {
 
 
 /*=================MEDIA QUERY==================================*/
-@media screen and (min-width: 769px){
+@media only screen and (min-width: 769px){
 
 	body {
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
 
-	.main-wrap {
-
+	.nav ul{
+		flex-flow: column wrap;
+		margin-left: 5%;
 	}
 
 	.nav ul li {
+		
 		list-style-type: none;
 		padding: 5px;
 		font-size: 1.8em;
 
+	}
+
+	.nav ul a {
+		opacity: 0.5;
+	}
+
+	.main-wrap {
+		flex-flow: row wrap;
+		margin-left: 5%;
+		justify-content: left;
+		text-align: left;
 	}
 
 
@@ -130,6 +144,10 @@ img.nav-bg {
 	input[type='text'] {
 		border-bottom: none;
 		text-shadow: 0 0 10px rgba(23, 32, 42, 0.8);
+	}
+
+	input::placeholder {
+		text-align: left;
 	}
 
 	
